@@ -16,8 +16,8 @@ du -ah $directory | sort -nr | head -n 1 #en büyük dosyayı gösterir
 #du -sh
 echo "Dizindeki en küçük boyutlu dosya :"
 du -ah  $directory |sort -h | head -n 1 #en küçük dosyayı gösterir
-echo "Dizindeki dosya sayısı"
-ls $directory | wc -l
+echo "Dizindeki dosya sayısı :"
+find . $directory -type d | wc -l
 echo "Dizindeki klasör sayısı :"
 find . $directory -type f | wc -l
 echo "Dizinin sahibi :"
