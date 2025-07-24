@@ -18,13 +18,16 @@ echo "Dizindeki klasör sayısı :"
 find . -type f | wc -l
 echo "Dizinin sahibi :"
 stat -c %U $directory
+echo "Dizinin sahibinin grubu :"
+stat -c %U $directory
 echo "Dizindeki dosyaların uzantı listesi :"
-find . $directory -type f -name "*"
+#dosya sayısı 10 ile sınırlandırıldı.
+find . $directory -type f -name "*" | head -n 10
 
 else
 	directory=$1
 	echo "Dizindeki dosyalar ve boyutları :"
-du -sh * $directory #dosyaların boyutunu gösterir
+du -sch * $directory #dosyaların boyutunu gösterir
 echo "Dizindeki dosya yapısını gösterir :"
 ls -A  $directory #dosya yapısını gösterir
 echo "Dizindeki en büyük boyutlu dosya :"
@@ -36,9 +39,13 @@ echo "Dizindeki dosya sayısı :"
 ls $directory | wc -l
 echo "Dizindeki klasör sayısı :"
 find . $directory -type f | wc -l
-stat -c  %G $directory
+echo "Dizinin sahibi :"
+stat -c  %U $directory
+echo "Dizinin sahibinin grubu :"
+stat -c %G $directory
 echo "Dizindeki dosyaların uzantı listesi:"
-find . $directory -type f -name "*"
+#dosya sayısı 10 ile sınırlandırıldı.
+find . $directory -type f -name "*" | head -n 10
 
 
 fi
