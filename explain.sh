@@ -22,7 +22,7 @@ echo "Dizinin sahibinin grubu :"
 stat -c %G $directory
 echo "Dizindeki dosyaların uzantı listesi :"
 #dosya sayısı 10 ile sınırlandırıldı.
-find . $directory -type f -name "*" | head -n 10
+find . $directory -type f -name "*" | sort -r | head -n 10
 
 else
 	directory=$1
@@ -45,7 +45,7 @@ echo "Dizinin sahibinin grubu :"
 stat -c %G $directory
 echo "Dizindeki dosyaların uzantı listesi:"
 #dosya sayısı 10 ile sınırlandırıldı.
-find . $directory -type f -name "*" | head -n 10
+find . $directory -type f -name "*" | sort -r | head -n 10
 
 
 fi
