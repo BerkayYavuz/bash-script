@@ -2,7 +2,7 @@
 
 if [ "$#" -eq 0 ]
 then
-directory=$pwd
+	directory=$(pwd)
 echo "Dizindeki dosyalar, boyutları ve toplam boyutu :"
 du -sch * $directory #dosyaların boyutunu gösterir
 echo "Dizindeki dosya yapısını gösterir :"
