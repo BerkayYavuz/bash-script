@@ -19,7 +19,7 @@ du -ah  $directory |sort -h | head -n 1 #en küçük dosyayı gösterir
 echo "Dizindeki dosya sayısı"
 ls $directory | wc -l
 echo "Dizindeki klasör sayısı :"
-find . -type f | wc -l
+find . $directory -type f | wc -l
 echo "Dizinin sahibi :"
 stat -c %U $directory
 echo "Dizinin sahibinin grubu :"
